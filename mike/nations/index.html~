@@ -70,7 +70,6 @@ text {
 </footer>
 
 <script src="http://d3js.org/d3.v2.js?2.8.1"></script>
-<script src="nations.js"></script>
 <script>
 
 // Various accessors that specify the four dimensions of data to visualize.
@@ -139,8 +138,8 @@ var label = svg.append("text")
     .text(1800);
 
 // Load the data.
-//d3.json("nations.json", function(nations) {
-(function(nations) {
+d3.json("nations.json", function(nations) {
+
   // A bisector since many nation's data is sparsely-defined.
   var bisect = d3.bisector(function(d) { return d[0]; });
 
@@ -255,6 +254,6 @@ var label = svg.append("text")
     }
     return a[1];
   }
-})  (data);
+});
 
 </script>
